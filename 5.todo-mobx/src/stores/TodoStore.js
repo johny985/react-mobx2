@@ -7,8 +7,15 @@ class TodoStore {
   @observable
   _todo = {};
 
+  @observable
+  _todos = [];
+
   get todo() {
     return this._todo;
+  }
+
+  get todos() {
+    return this._todos;
   }
 
   @action
@@ -17,6 +24,11 @@ class TodoStore {
       ...this._todo,
       [name]: value,
     };
+  }
+
+  @action
+  addTodo(todo) {
+    this._todos.push(todo);
   }
 }
 

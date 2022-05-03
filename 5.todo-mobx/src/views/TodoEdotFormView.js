@@ -12,7 +12,7 @@ import {
 
 class TodoEditFormView extends PureComponent {
   render() {
-    const { todo, onSetTodoProps } = this.props;
+    const { todo, onSetTodoProps, onAddTodo } = this.props;
 
     return (
       <form noValidate>
@@ -44,7 +44,12 @@ class TodoEditFormView extends PureComponent {
           </Grid>
         </Grid>
         <Grid item>
-          <Button variant="contained" color="primary" startIcon={<SaveIcon />}>
+          <Button
+            variant="contained"
+            color="primary"
+            startIcon={<SaveIcon />}
+            onClick={onAddTodo}
+          >
             Add
           </Button>
           &nbsp;&nbsp;
