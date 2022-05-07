@@ -10,11 +10,12 @@ import {
   Paper,
 } from "@material-ui/core";
 import { observer } from "mobx-react";
+import moment from "moment";
 
 @observer
 class TodoListView extends PureComponent {
   render() {
-    const { todos } = this.props;
+    const { todos, onSelectedTodo } = this.props;
 
     return (
       <TableContainer component={Paper}>
@@ -28,9 +29,15 @@ class TodoListView extends PureComponent {
           <TableBody>
             {Array.isArray(todos) && todos.length ? (
               todos.map((todo) => (
-                <TableRow key={todo.id}>
+                <TableRow
+                  key={todo.id}
+                  hover
+                  onClick={() => onSelectedTodo(todo)}
+                >
                   <TableCell>{todo.title}</TableCell>
-                  <TableCell>{todo.date}</TableCell>
+                  <TableCell>
+                    {moment(todo.date).format("YYYY-MM-DD")}
+                  </TableCell>
                 </TableRow>
               ))
             ) : (
