@@ -10,12 +10,25 @@ class TodoStore {
   @observable
   _todos = [];
 
+  @observable
+  _searchText = "";
+
   get todo() {
     return this._todo;
   }
 
   get todos() {
     return this._todos;
+  }
+
+  get searchText() {
+    return this._searchText;
+  }
+
+  @action
+  setSearchText(searchText) {
+    this._searchText = searchText;
+    console.log(this.searchText);
   }
 
   @action
