@@ -13,8 +13,8 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Main}></Route>
-          <Route exact path="/about" component={About}></Route>
-          <Route exact path="/lesson" component={Lessons}></Route>
+          <Route path="/about" component={About}></Route>
+          <Route path="/lessons" component={Lessons}></Route>
           <Route component={() => <h2>Not Found!</h2>}></Route>
         </Switch>
       </div>

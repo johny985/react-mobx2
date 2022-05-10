@@ -9,19 +9,13 @@ class Nav extends Component {
         <h2>Namoosori</h2>
         <ul className="nav-links">
           <li>
-            <NavLink exact to="/">
-              Main
-            </NavLink>
+            <NavLink to="/">Main</NavLink>
           </li>
           <li>
-            <NavLink exact to="/about">
-              About
-            </NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <NavLink exact to="/lesson">
-              Lessons
-            </NavLink>
+            <NavLink to="/lessons">Lessons</NavLink>
           </li>
         </ul>
       </nav>
